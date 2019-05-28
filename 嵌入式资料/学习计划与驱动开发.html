@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习计划与驱动开发</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">学习计划与驱动开发</h1>
+        <div class="show-content">
+          <p>文章分类与写作方向(如何写出优秀的博客) </p><p>参考 http://www.cnblogs.com/cookier/p/3531586.html</p><p>简书整理思路</p><p>文章分类:程序开发(入门 软考-软考全攻略--下午题必过秘籍 研发-医疗软件)  生活(公务员-关注时事</p><p>[互联网风口] 英语-girl speaking 有趣 证件问题解决)  工具(adb 适合自学的程序设计入门书(转)-</p><p>如何挑选合适的资料)</p><p>优秀文章:上下文链接 放个人公众号  精炼  热点 图文并茂 部分源码  管理:标签 专题  目标;自己复习 吸粉</p><p><br></p><p><br></p><p>算法学习动力</p><p>来源：解决什么问题-&gt;怎么实现-&gt;具体例子；</p><p>先用几分钟想想再看书-&gt;不懂的看一遍代码然后理解-&gt;再不行看多几遍找解答；</p><p><br></p><p>更早</p><p>初学者及学习感悟</p><p>俗名：为什么看代码，看什么代码，怎么看代码</p><p>装逼名：可扩展性非正常日常研究</p><p>看代码方法：1.先简化(屏蔽特殊代码):分模块-if-else等特殊判断（剪切else走）；</p><p>2.举特殊值，把自己想象成CPU，严格按照C编译器和语法，每步写注释；</p><p>3.打印调试，工具IDE</p><p>个人喜好规正：改变学习策略，一打开就写代码，然后才能做其他东西</p><p><br></p><p>###开发驱动</p><p>主要有两方面的基础要求：《应用程序，操作系统，驱动程序和硬件》</p><p>a，明白你手头的硬件工作原理，包括处理器架构的知识，还有外设控制器的 datasheet 为必读之物；</p><p>b，假如你们要开发的整个系统是裸机程序，那你要开发的驱动程序就是一套和硬件打交道的函数库；但是假如你们计划在产品中使用一个操作系统，那开发驱动之前就需要熟悉这个操作系统的相关内部操作原理，因为你写的是驱动程序需要很好的“镶嵌”到这个操作系统的环境中去。</p><p>引言，摘自百度</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/2636843-b93a44d9f0cea81f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/2636843-b93a44d9f0cea81f.png?imageMogr2/auto-orient/strip" data-image-slug="b93a44d9f0cea81f" data-width="798" data-height="716"><br><div class="image-caption"></div>
+</div><p>0.研究编译器优化等级对程序源代码的影响</p><p><br></p><p>4.13总结：跟老师步骤例子：要解决怎么样的一系列问题 可以模仿这些步骤来自己学习</p><p>选配件（先研究代码）   有意识用之前学过的知识  gcc编译命令回顾，习惯：回顾之前学过知识并有意识地用用；</p><p>学习工作重心安排</p><p>每天用一半时间学习算法和数据结构，3/10学嵌入式基础知识，2成时间学商业，市场等知识</p><p>驱动核心知识</p><p>按照模板结合原理图</p><p>深入理解Linux源代码</p><p><br></p><p>前言</p><p>真的有追求的程序员，而且编程经验在5年以上的C++程序员，应该是平台无关的，而且至少应该读懂汇编IA32/AT&amp;T，此外还应该精通java/.net以及某种脚本语言Perl/Python, 数据库也该有所涉猎.然后结合特定领域，比如音频视频，驱动，破解，游戏, 搜索引擎，分布式计算等等长足发展才是正道。</p><p>BTW, 我也是从先学windows后学的linux</p><p>你的结论成立适用一部分情况，windows某些领域由于闭源和资料匮乏，需要一点点hack, 这也是很痛苦的。</p><p>***</p><p>目录</p><p>0.学习路线图</p><p><b>飞控算法，学习姿态、PID、控制算法</b></p><p>1.现有知识总结</p><p>     2011年，《C程序设计》，入门看不懂；</p><p>    2012年，二级C未过；51单片机（郭天详10讲【看到中断】，没动手实践；）</p><p>      Android程序开发：几个简单的UIdemo，课程看得挺多，但是实践挺少，面试过几次，笔试基础OK，无项目经验和作品，对编程其他方面概念较弱</p><p>    2013年，Arduino照案例点亮过几个小模块【最新的W5100】，无项目；</p><p>    2016年，年末报了粤嵌周末班，上了7-8次课（裸机，未做项目）</p><p>2.代码保存链接:<a href="https://github.com/kjiawei%20" target="_blank">邝嘉伟的Github</a>  </p><p>3.问题讨论记录</p><p>4.收集的资料（软件工具，图像视频教程）</p><p>5.论坛大牛共享的可扩展的学习目标</p><p>6.职业目标：无人机研发(无人机-》无人机模拟招聘-&gt;复习C语言，加深基础-&gt;面试)</p><p>算法、线性代数-&gt;张宇、王式安和中科  李永乐，唐家风，张宇的视频 b站</p><p>李永乐强化班-张伟，一共约20个小时，如果加上基础班，差不多大学线代的课时了。自己看完一遍书后再看看他的课，会感觉更好。不过还是要自己多做做练习</p><p>第一步：了解无线模块（无线遥控）的使用，各种协议，如何实现，各个环节（例如：硅如何制成蓝牙模块并能通过软件实现无线传输功能，寻找适合产品的方案）</p><p><br></p><p>7.6更新上来的</p><p>4.26 文件存储思考</p><p>笔记本：可用成品 学习资料 笔记（在途）  U盘:常用 转储 笔记(在途)</p><p>3.15</p><p>gdb调试：编译时要加上-g选项，生成的可执行文件才能用gdb进行源码级调试</p><p>gcc -g main.c -o main</p><p>退出GDB：quit或者Ctrl+d</p><p>可以直接按下回车再次执行最近执行过的那条命令</p><p>分屏显示源代码：gdb -tui</p><p>无法产生core:ulimit -a    自动生成core文件:ulimit -c unlimited</p><p>bt显示栈信息</p><p>generate-core-file</p><p>例子</p><p>1. 安装好gdb，然后使用命令 'gdb'。（假设需要调试的进程号为 21509）</p><p>2. 使用 ‘attach 21590’命令将gdb附加到进程21509上。</p><p>3. 使用‘gcore core_name’命令生成coredump文件core_name。</p><p>4. 使用‘detach’命令断开连接。</p><p>5.使用‘q’命令退出gdb。</p><p>2017.2.26</p><p>周末班：智能家居项目</p><p>个人：看了小部分项目文档</p><p>2017.3.1</p><p>English</p><p>duplicate复制</p><p>badge徽章</p><p>方法：</p><p>count=0;//用来判断求素数次数</p><p>程序之所以会时不时的出现“Segmetation Fault”的根本原因是进程访问到了没有访问权限的地方，诸如内核区域或者其0x08048000之前的地方，或者由于要访问的内存没有经MMU进行映射所导致。而这种问题比较多的是出在malloc()之类的动态内存申请函数申请完内存，释放后，没有将指针设置为NULL，而其他地方在继续用先前申请的那块内存时，由于内存管理系统已经将其收回，所以才会出现这样的问题。良好的关于指针的使用习惯是，使用之前先判断其是否为NULL，所有已经归还给操作系统的内存，其访问指针都要及时置为NULL，防止所谓的“野指针”到处飞的情况，不然在大型项目里，光是围剿“Segmetation Fault”就要耗费不少兵力。</p><p>问题1：Program received signal SIGSEGV, Segmentation fault.</p><p>0xb7ca7767 in gtk_menu_shell_insert ()</p><p>from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0</p><p>对于不正确的内存处理，计算机程序可能抛出SIGSEGV。操作系统可能使用信号栈向一个处于自然状态的应用程序通告错误，由此，开发者可以使用它来调试程序或处理错误。</p><p>在一个程序接收到SIGSEGV时的默认动作是异常终止。这个动作也许会结束进程，但是可能生成一个核心文件以帮助调试，或者执行一些其他特定于某些平台的动作。</p><p>2017 3.12</p><p>周末整理笔记  可以尝试开发洗衣机控制器  太阳能  多了解家电知识</p><p>开发一款综艺提醒软件：最强大脑 喜剧 TVB NBA 鬼吹灯 电影</p><p><br></p><p>看代码目标</p><p>2017.1.15</p><p>内核学习《Linux内核探秘》kernel2.6.18</p><p>掌握整体结构和操作流程</p><p>理解关键代码</p><p>熟悉代码模块</p><p>了解代码运用的算法</p><p>写部分lunux内核的代码</p><p>目标：运用kernel写一个智能操作系统</p><p>工作：设备驱动开发 文件系统应用</p><p>1.18学习问题与总结</p><p>效率：严格遵守学习计划{分段 过时找时间补回；明确学习目的：做项目-评判或放弃}</p><p>学习方法实验：每早提出很多当天要解决的问题；</p><p>Linux：什么是bss段和data段</p><p>前端：设置状态  提交的判断 数据的来去  组件的使用  传参</p><p>2017.3.3</p><p>虚拟机更新tool</p><p>tar -xzvf file.tar.gz //解压tar.gz</p><p>tar -xjvf file.tar.bz2   //解压 tar.bz2</p><p>http://www.cnblogs.com/qq78292959/archive/2011/07/06/2099427.html</p><p>3.3</p><p>去公交：2</p><p>3.2</p><p>罚单：200  买菜水果-秀40 停车7 早餐3</p><p>3.1</p><p>午餐10  早餐3</p><p>0.恢复之前环境（VSCode）  一年后目标：学数据结构和算法</p><p>1.如何知道电子产品打折活动（季节，平台，论坛）</p><p>2.拆解电子产品需要写报告：设计 模块的作用（原理）和实现</p><p>3.原则问题：选择学习资料问题：课内只看当时老师的资料，课外看评价高（值得深入探讨）的</p><p>4.程序员健康与饮食http://blog.csdn.net/netimmortal/article/details/7779425</p><p>Matrix67作者介绍：http://www.ituring.com.cn/article/1370#</p><p>5.</p><p>记忆：常用ASCII码&amp;进制转换值</p><p>移位操作在实际的编程中作用</p><p>熟悉：对第几位清零：ch &amp;= ~(0x1&lt;&lt;几)  置1：ch |= (0x1&lt;&lt;几)</p><p>快速优化代码（提高效率，灵魂）左移乘法，右移除法</p><p>x/=2   x/=32   =&gt;    x&gt;&gt;1    x&gt;&gt;5（n为2的次方）</p><p>节约内存，把一个byte当成8个bit来用    windowsApi编程</p><p>1.(0 == x % 2)=》(0 == x &amp; 1)</p><p>2./* -------------把r、g、b混合成32位颜色------------- */</p><p>#define MAP_RGB(r, g, b)    (((r) &lt;&lt; 16) + ((g) &lt;&lt; 8) + (b))</p><p>/* -------------从一个32位色中取出r、g、b-------------  */</p><p>#define PIXEL_GET_R(pix)    (((pix) &amp; 0xFF0000) &gt;&gt; 16)</p><p>#define PIXEL_GET_G(pix)    (((pix) &amp; 0xFF00) &gt;&gt; 8)</p><p>#define PIXEL_GET_B(pix)    (((pix) &amp; 0xFF))</p><p>3.比如键盘modifier    我们按ctrl+alt+shift</p><p>那么怎么表达这个状态呢?</p><p>当然可以用三个变量来存储.  但是这样太浪费了, 而且也不合理.</p><p>直接用一个enum   把三个状态 或起来,  然后判断的时候  于操作.</p><p>enum MODIFIER</p><p>{</p><p>CTRL,</p><p>ALT,</p><p>SHIFT</p><p>};</p><p>enum MODIFIER a;</p><p>if (a &amp; CTRL &amp; ALT &amp;SHIFT)</p><p>{</p><p>cout &lt;&lt; "ctrl+alt+shift" &lt;&lt; endl;</p><p>}</p><p>字节与位的模型理解  复习优先级和结合性</p><p>static与const区别    指针各类用法与陷阱（错题，旧知识存在哪些问题）</p><p>周末：linux  vs  windows:</p><p>http://blog.csdn.net/howeverpf/article/details/7846259</p><p>strlen:只能用于字符串求长度？</p><p>char a[10]={58,22};//strlen(a)=2</p><p>char b[8] = "hello";//strlen(b)=5</p><p>sizeof:与数组长度有关，字节=返回值类型*数组长度？</p><p>char ch[10]="hello";      sizeof(ch)=10</p><p>int ch1[8]={1,2,3,4,5};      32</p><p>short buffer[13]={3,4,5,6,0};   26</p><p>char buffer1[5] = {'\0'};</p><p>char buffer2[10]={58,22};         10</p><p>printf("%d\n",sizeof(ch));</p><p>printf("%d\n",sizeof(ch1));</p><p>printf("%d\n",sizeof(buffer));</p><p>printf("%d\n",sizeof(buffer2));</p><p>printf("%d\n",strlen(ch));</p><p>// printf("%d\n",strlen(ch1));//会报不兼容的错</p><p>// printf("%d\n",strlen(buffer));</p><p>printf("%d\n",strlen(buffer2));</p><p>字符串与数组的区别：https://zhidao.baidu.com/question/189706236.html</p><p>C语言中字符串在内存中是由字符型数组来存储的.且在存储的时候多加'\0'表示字符串已经结束，而且字符串是以'\0'结尾的,所以存储的数组大小至少是字符串长度加1.</p><p>什么是动态类型和静态类型</p><p>C语言是弱类型吗？</p><p>允许隐式转换，所以有人就当做弱类型了。</p><p>我是觉得这种分类没什么实质意义。只要值的类型（对应于C++的动态类型）在编译时是确定的，就是强类型。</p><p>脚本语言的弱类型是因为有运行时和解释器的支撑</p><p>C语言动态和静态存储类别的区别</p><p>主要区别在于存储区域和作用时间。</p><p>C语言的数据区分为静态存储区与动态存储区。</p><p>静态存储是指在程序运行期间给变量分配固定存储空间的方式。如全局变量存放在静态存储区中，程序运行时分配空间，程序运行完释放。</p><p>动态存储是指在程序运行时根据实际需要动态分配存储空间的方式。如形式参数存放在动态存储区中，在函数调用时分配空间，调用完成释放。</p><p>静态存储区、堆和栈的区别</p><p>http://blog.csdn.net/ccccdddxxx/article/details/7085165</p><p>字符数组与字符串的区别是什么？字符数组的定（赋）义（值）方式都有哪几种？</p><p>C语言内存模型：http://www.cnblogs.com/fengyv/p/3789252.html</p><p>2017.2.26</p><p>周末班：智能家居项目</p><p>个人：看了小部分项目文档</p><p>2017.3.1</p><p>English</p><p>duplicate复制</p><p>badge徽章</p><p>方法：</p><p>count=0;//用来判断求素数次数</p><p>2017.2.26</p><p>周末班：智能家居项目</p><p>个人：看了小部分项目文档</p><p>1.任务未完成：缺100行代码 无湿度传感器 定时器、中断 文件系统移植</p><p>2.什么是BSP（板级支持包）</p><p>12.29</p><p>块设备</p><p>通常是指诸如磁盘、内存、Flash等可以容纳文件系统的存储设备。</p><p>块设备也是通过文件系统来访问，与字符设备的区别是：内核管理数据的方式不同</p><p>它允许象字符设备一样以字节流的方式来访问，也可一次传递任意多的字节。</p><p>回忆总结学嵌入式的目的：</p><p>开发智能家居，电子产品，代码+硬件  -》技术+产品+研究的感觉--》回到基础：数电，模电（看不明白-收集问题-解决问题）</p><p>2017.2.27</p><p>智能家居的音响模块-独立单片机控制（无损语音，智能播放，收听习惯采集推荐）-mp3（解码：VS1053）-360s2单片机</p><p>带来了问题：智能家居显示的思考</p><p>1.无显示如何通过暗操作实现功能（远程-&gt;嵌入式带有的秘诀操作）</p><p>2.通用显示模块的实现（显示器如何可调分辨率）</p><p>3.嵌入式屏幕如何改造为通用</p><p>4.某种重置操作能恢复显示效果（驱动文件修改）</p><p><br></p><p><br></p><p>sudo vi can't open file for writing</p><p>ubuntu换环境就无法上网</p><p>/etc/resolv.conf文件下有IP等信息</p><p>/etc/network.interfaces文件下内容为空</p><p>address 192.168.172.74</p><p>netmask 255.255.255.0</p><p>gateway 192.168.172.254</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
