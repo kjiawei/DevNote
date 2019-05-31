@@ -1,0 +1,167 @@
+===================线程池============
+1.struct thread_pool
+  {
+        pthread_t *id;  //存放多个线程的id号
+        pthread_mutex_t  thread_mutex;  
+        pthread_cond_t   thread_cond; 
+        int task_num;  // 当前任务链表中有效任务的数量
+        int active_pthread;  // 活跃线程的数量
+        bool pool_state;     // 标志位表示线程池是否存在
+        struct task *head;   // 任务链表的表头
+  };
+
+2.线程池相关的操作
+ 以下分析只是提供了一个基础的参考模板，写完之后可以根据自己的想法去优化线程池
+    (1)初始化线程池
+
+int  pool_init(struct thread_pool *mypool,int threadnum)
+{
+    int i;
+    //初始化线程池结构体
+    mypool->id=malloc(threadnum*sizeof(pthread_t));
+    pthread_mutex_init(&mypool->thread_mutex,NULL);
+    pthread_cond_init(&mypool->thread_cond,NULL);
+    mypool->task_num=0;
+    mypool->active_pthread=threadnum;
+    mypool->pool_state=true;  
+    // 创建threadnum个线程
+    for(i=0; i<threadnum; i++)
+    {
+	pthread_create(&(mypool->id[i]),NULL,thread_fun,(void *)mypool);
+    }
+    return 0;
+} 
+       (2)线程池中每个线程的功能函数
+   /*
+        功能：处理任务链表中头节点的下一个有效节点  （添加任务从链表的尾部添加，处理任务从头部的下一个节点开始）
+        struct task
+            {
+                 void *(*handler)(void *);  // 函数指针，指向的是要处理的某个任务（通用性挺好的）
+                 void *arg;                 // 传递给函数指针的参数
+                 struct task *next;     
+            };
+   void *closemutex(void *arg)
+   {
+       // 把锁解开
+       pthread_mutex_unlock()
+   }
+   */
+   void *thread_fun(void *arg)  
+   {
+        struct task *q;  // 用于指向挖下来的节点
+	//参数arg是初始化好的线程池
+        while(1)
+        {
+            // 调用函数防止死锁
+            pthread_cleanup_push(closemutex,(void *)(&(arg->thread_mutex)))
+             // 上锁
+            pthread_mutex_lock()
+             // 任务链表中没有任务，并且线程池没有关闭
+            while(arg->task_num==0&&arg->pool_state==true)
+           {
+                pthread_cond_wait();
+           }
+            //  任务链表中没有任务，并且线程池关闭了
+            while(arg->task_num==0&&arg->pool_state==false)
+            {
+                pthread_mutex_unlock();
+                pthread_exit(NULL);
+            }
+           // 取出头节点的后面的一个节点
+              当前任务数量减一 
+           pthread_mutex_unlock();
+           pthread_cleanup_pop(0);  //让closemutex出栈，但不执行它
+           // 处理节点中任务
+           q->handler(q->arg);   // 通过函数指针调用指向的函数
+           // 释放取出来的任务节点
+           free(q);
+        }
+       
+   }
+       (3)添加任务的函数
+    int  add_task(struct thread_pool *mypool,void *(*p)(void *),void *argument)
+    {
+        // 先准备好新的任务节点
+        
+        pthread_mutex_lock()
+        // 往任务链表的尾部插入新的任务节点
+        // 
+
+           当前任务数量加一
+        pthread_mutex_unlock()
+        // 以广播的方式通知所有的线程解除阻塞
+        pthread_cond_broadcast();
+    }
+      （4）新增线程
+   int add_thread(struct thread_pool *mypool,int additional)
+   {
+        int i;
+        for(i=0; i<additional; i++)
+        {
+
+        }
+        // 活跃线程的数量更新
+           id也要更新
+   }
+          删除线程
+   int  del_thread(struct thread_pool *mypool,int delnum)
+   {
+       
+         // 循环调用pthread_cancel() 野蛮的做法
+
+   }
+       （5）线程池的回收(销毁)
+    int threadpool_destroy(struct thread_pool *mypool)
+    {
+        mypool->pool_state=false;  // 将线程池的开关关闭
+        pthread_cond_broadcast();  // 唤醒阻塞的线程
+        for(i=0; i<mypool->active_pthread; i++)
+        {
+             pthread_join(mypool->id[i],NULL);
+          
+        }
+        // 锁的销毁  条件变量的销毁
+           释放指针id
+           释放线程池结构体指针mypool
+    }
+
+
+
+======================关于线程池封装好的函数如何去使用=============
+// 封装函数表示任务，你要线程池做什么？？
+   void *fun1(void *arg)
+   {
+        
+
+
+   }
+int  main()
+{
+    // 准备好线程池
+    pool_init(struct thread_pool *mypool,int threadnum);
+    // 往任务链表中添加任务
+    add_task(struct thread_pool *mypool,void *(*p)(void *),void *argument)
+
+
+    //销毁线程池
+    threadpool_destroy(struct thread_pool *mypool)
+    return 0;
+
+}
+      
+
+char *p="hello"   p[0]   p[1]
+char a[6]="hello"
+   
+知识点：
+       （1）编译器中的-D选项在调试代码中有什么用处
+       （2）使用tftp服务器，如何从windows系统中下载，上传文件
+                tftp  -g ip地址  -r  文件名字  
+       （3）内核链表中提供给我们的常用的宏函数有哪些，分析参数含义
+
+
+    
+
+
+
+    
